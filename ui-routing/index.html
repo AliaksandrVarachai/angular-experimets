@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<style>.active { color: red; font-weight: bold; }</style>
+<body>
+    
+    
+    <div ng-app="router">
+        <h3>Navigation bar:</h3>
+        <ul>
+            <li><a ui-sref="home" ui-sref-active="active">home</a></li>
+            <li><a ui-sref="public" ui-sref-active="active">public</a></li>
+            <li><a ui-sref="secret" ui-sref-active="active">secret</a></li>
+        </ul>
+        <main>
+            <div ui-view></div>
+        </main>
+    </div>
+
+    <!-- <div ng-app="app" ng-controller="Ctrl">
+        <h1>hello {{name}}</h1>
+    </div> -->
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
+    <script src="http://localhost:9080/app.js"></script>
+</body>
+</html>

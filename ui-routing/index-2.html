@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<style>.active { color: red; font-weight: bold; }</style>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="238794614784-hgmq12khtcn9g88mdrpq5tmpvmh3811r.apps.googleusercontent.com">
+<body>
+    <div ng-app="router">
+        <div>
+            <button id="sign-in-google" ng-click="onSignIn()">Sign in via Google account</button>
+            <button class="g-signin2" data-onsuccess="onSignIn2">Sign in 2</button>
+        </div>
+        <div ui-view></div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
+    <script src="http://localhost:9080/app-2.js"></script>
+</body>
+</html>

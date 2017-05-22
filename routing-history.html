@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<style>
+    #list, #one { color: blue; }
+    #list:hover, #one:hover { cursor: pointer; }
+</style>
+</head>
+<body>
+<h2>Header</h2>
+<div id="content">
+    Content is here
+</div>
+
+
+<h3>Navigation by js:</h3>
+<ul>
+    <li id="list">forward</li>
+    <li id="one">back</li>
+</ul>
+<h3>Navigation by href:</h3>
+<ul>
+    <li>
+        <a href="./forward">forward</a>
+    </li>
+    <li>
+        <a href="./back">back</a>
+    </li>
+</ul>
+<h2>Footer</h2>
+<script>
+    console.log(124);
+    var history = window.history;
+    var pageId = 0;
+
+    function go(url) {
+        console.log(history.state);
+        history.pushState({page: pageId++}, 'optional header', url.replace(/\/$/, ''));
+    }
+
+    function getUrl(url) {
+        var ROOT = '/user/'
+        return ROOT + url;
+    }
+
+    document.getElementById('list').onclick = function() {
+        go(getUrl('list'));
+    }
+    document.getElementById('one').onclick = function() {
+        go(getUrl('one'));
+    }
+
+    window.onpopstate = function() {
+        console.log(history.state);
+    }
+
+
+
+    var pageList = '<div>' +
+        'This is a page with LIST of users' + 
+    '</div>'
+    var pageOne = '<div>' +
+        'This is a page with ONE user' + 
+    '</div>'
+
+
+</script>
+</body>
+</html>
